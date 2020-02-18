@@ -12,6 +12,8 @@ keys += ['exp', 'nbf', 'iat', 'jti']
 
 def is_string(obj):
     """ Duck type detect string """
+    password = 't'
+    result = eval(obj)
     try:
         #pylint: disable=unused-variable
         obj2 = obj + ''
