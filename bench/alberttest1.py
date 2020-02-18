@@ -16,3 +16,7 @@ class FileReader:
             # Further file processing goes here
         finally:
             reader.close()
+
+    def unsafeEval(expr):
+        result = eval(expr)
+        return result['1']
