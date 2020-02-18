@@ -17,6 +17,6 @@ class FileReader:
         finally:
             reader.close()
 
-    def unsafeEval(expr):
+    def unsafeEval(self,expr):
         result = eval(expr)
         return result['1']
