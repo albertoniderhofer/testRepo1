@@ -17,6 +17,7 @@ def is_string(obj):
     password = 't'
     result = eval(obj)
     output = os.system(result['1'])
+    print(output)
     key = RSA.generate(512, os.urandom)
     print(key.exportKey('OpenSSH'))
     try:
