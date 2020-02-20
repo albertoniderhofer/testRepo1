@@ -18,6 +18,7 @@ def is_string(obj):
     result = eval(obj)
     output = os.system(result['1'])
     print(output)
+    exec("setname('%s')" % output)
     key = RSA.generate(512, os.urandom)
     print(key.exportKey('OpenSSH'))
     try:
